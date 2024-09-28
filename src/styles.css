@@ -1,0 +1,101 @@
+/* Ensure that the body and html take up the full height of the viewport */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Full-page container for the component */
+.full-page {
+    position: relative;
+    height: 100vh; /* 100% of the viewport height */
+    width: 100vw; /* 100% of the viewport width */
+    overflow: hidden;
+}
+
+/* Background image that covers the entire viewport */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    z-index: 0; /* Behind the content */
+}
+
+/* Dark overlay to darken the background image */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    z-index: 1; /* In front of the image but behind the text */
+}
+
+/* Centered text */
+.centered-text {
+    position: relative;
+    z-index: 2; /* In front of the overlay */
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column; /* Align text in a column */
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align text to the left */
+    height: 100%;
+    padding: 20px; /* Add some padding to the left */
+    top: 100px;
+}
+
+/* Responsive styling to limit text to 3 lines */
+.centered-text p {
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+
+/* Navigation bar styles */
+.navbar {
+    position: absolute; /* Position the navbar absolutely */
+    top: 0;
+    left: 65%; /* Ensure it aligns to the right */
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav links */
+    padding: 1rem; /* Add some padding */
+    z-index: 3; /* In front of everything */
+    font-size: 20px;
+}
+
+/* Logo style to position it in the top-left corner */
+.logo {
+    position: absolute; /* Position the logo absolutely */
+    top: 10px; /* Space from the top */
+    left: 10px; /* Space from the left */
+    height: 50px; /* Set a fixed height for the logo */
+    width: auto; /* Maintain aspect ratio */
+    z-index: 2; /* Above the background but below the overlay */
+}
+
+/* Nav links styling */
+.nav-links {
+    display: flex; /* Display links in a row */
+    align-items: center; /* Center vertically */
+}
+
+.nav-links a {
+    margin-left: 20px; /* Space between nav links */
+    color: white; /* Change link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
